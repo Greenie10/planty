@@ -22,6 +22,7 @@ var Comment = React.createClass({
       <div className="comment">
         <h2 className="commentAuthor">
           {this.props.author}
+          {this.props.genus}
         </h2>
         <span dangerouslySetInnerHTML={this.rawMarkup()} />
       </div>
@@ -89,6 +90,7 @@ var CommentList = React.createClass({
       return (
         <Comment author={comment.author} key={comment.id}>
           {comment.text}
+          {comment.genus}
         </Comment>
       );
     });
@@ -102,7 +104,7 @@ var CommentList = React.createClass({
 
 var CommentForm = React.createClass({
   getInitialState: function() {
-    return {author: '', text: ''};
+    return {author: '', text: '', genus: ''};
   },
   handleAuthorChange: function(e) {
     this.setState({author: e.target.value});
@@ -110,15 +112,19 @@ var CommentForm = React.createClass({
   handleTextChange: function(e) {
     this.setState({text: e.target.value});
   },
+  handleGenusChange: function(e) {
+    this.setState({genus: e.target.value});
+  },
   handleSubmit: function(e) {
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.text.trim();
-    if (!text || !author) {
+    var genus = this.state.genus.trim();
+    if (!text || !author || !genus) {
       return;
     }
-    this.props.onCommentSubmit({author: author, text: text});
-    this.setState({author: '', text: ''});
+    this.props.onCommentSubmit({author: author, text: text, genus: genus});
+    this.setState({author: '', text: '', genus: ''});
   },
   render: function() {
     return (
@@ -134,6 +140,12 @@ var CommentForm = React.createClass({
           placeholder="Say something..."
           value={this.state.text}
           onChange={this.handleTextChange}
+        />
+        <input
+          type="text"
+          placeholder="Genus"
+          value={this.state.genus}
+          onChange={this.handleGenusChange}
         />
         <input type="submit" value="Post" />
       </form>

@@ -2,16 +2,46 @@
     {
         "id": 1388534400000,
         "author": "Pete Hunt",
-        "text": "Hey there!"
+        "text": "Hey there!",
+        "genus": "Verbena"
     },
     {
         "id": 1420070400000,
         "author": "Paul O’Shannessy",
-        "text": "React is *great*!"
+        "text": "React is *great*!",
+        "genus": "Monarda"
     },
     {
         "id": 1470394347179,
         "author": "Lolly",
-        "text": "well, what?"
+        "text": "well, what?",
+        "genus": "Fritilaria"
+    },
+    {
+        "id": 1470403123371,
+        "author": "Thing",
+        "text": "thing"
+    },
+    {
+        "id": 1470404248208,
+        "author": "what",
+        "text": "what"
+    },
+    {
+        "id": 1470404431393,
+        "author": "witch",
+        "text": "witch"
+    },
+    {
+        "id": 1470404461009,
+        "author": "yo",
+        "text": "yo",
+        "genus": "yo"
+    },
+    {
+        "id": 1470404526572,
+        "author": "la",
+        "text": "la",
+        "genus": "la"
     }
 ]
